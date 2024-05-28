@@ -55,9 +55,9 @@ class LiqPayConnector extends Connector
     /**
      * @throws LiqPayException
      */
-    public function completePayment(CompletePaymentRequestDTO $dto): void
+    public function completePayment(CompletePaymentRequestDTO $dto): LiqPayPayment
     {
-        $this->send(new CompletePaymentRequest($this->authDto, $dto));
+        return $this->send(new CompletePaymentRequest($this->authDto, $dto))->dto();
     }
 
     /**
@@ -79,7 +79,7 @@ class LiqPayConnector extends Connector
     public function resolveBaseUrl(): string
     {
         $host = config('liq-pay.host');
-        if (! is_string($host)) {
+        if (!is_string($host)) {
             throw new RuntimeException('Invalid Liq Pay host');
         }
 
