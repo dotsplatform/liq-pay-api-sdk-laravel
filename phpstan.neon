@@ -1,0 +1,20 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    parallel:
+        jobSize: 8
+        maximumNumberOfProcesses: 64
+        minimumNumberOfJobsPerProcess: 16
+
+    level: 9
+    paths:
+        - src/App
+
+    ignoreErrors:
+        - '#Method .*\\LiqPayConnector::.* should return .* but returns mixed.#'
+        -
+            identifier: missingType.iterableValue
+#        -
+#            identifier: missingType.generics
+
