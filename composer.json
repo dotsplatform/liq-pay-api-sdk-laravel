@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dots\\LiqPay\\LiqPayServiceProvider"
+                "Dots\\LiqPay\\App\\LiqPayServiceProvider"
             ]
         }
     },
