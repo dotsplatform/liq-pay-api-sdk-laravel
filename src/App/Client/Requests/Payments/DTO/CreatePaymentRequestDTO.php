@@ -27,9 +27,9 @@ class CreatePaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
 
     protected string $order_id;
 
-    protected string $server_url;
+    protected ?string $server_url;
 
-    protected string $result_url;
+    protected ?string $result_url;
 
     public function getVersion(): string
     {
@@ -66,12 +66,12 @@ class CreatePaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
         return $this->order_id;
     }
 
-    public function getServerUrl(): string
+    public function getServerUrl(): ?string
     {
         return $this->server_url;
     }
 
-    public function getResultUrl(): string
+    public function getResultUrl(): ?string
     {
         return $this->result_url;
     }
