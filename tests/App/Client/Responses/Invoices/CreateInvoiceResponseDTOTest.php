@@ -7,7 +7,7 @@
 
 namespace Tests\App\Client\Responses\Invoices;
 
-use Dots\LiqPay\App\Client\Responses\Invoices\CreatePaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\CreatePaymentResponseDTO;
 use Tests\TestCase;
 
 class CreateInvoiceResponseDTOTest extends TestCase

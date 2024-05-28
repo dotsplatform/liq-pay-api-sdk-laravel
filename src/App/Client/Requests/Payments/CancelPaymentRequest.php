@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of CancelInvoiceRequest.php
+ * Description of CancelPaymentRequest.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
@@ -10,7 +10,7 @@ namespace Dots\LiqPay\App\Client\Requests\Payments;
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\CancelPaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\PostLiqPayRequest;
-use Dots\LiqPay\App\Client\Responses\Invoices\CancelPaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
 use Saloon\Http\Response;
 
 class CancelPaymentRequest extends PostLiqPayRequest

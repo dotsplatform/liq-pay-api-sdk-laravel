@@ -10,7 +10,7 @@ namespace Dots\LiqPay\App\Client\Requests\Payments;
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\CreatePaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\PostLiqPayRequest;
-use Dots\LiqPay\App\Client\Responses\Invoices\CreatePaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\CreatePaymentResponseDTO;
 use Saloon\Http\Response;
 
 class CreatePaymentRequest extends PostLiqPayRequest

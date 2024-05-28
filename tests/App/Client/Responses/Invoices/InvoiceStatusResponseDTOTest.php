@@ -7,7 +7,7 @@
 
 namespace Tests\App\Client\Responses\Invoices;
 
-use Dots\LiqPay\App\Client\Responses\Invoices\InvoiceStatusResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\InvoiceStatusResponseDTO;
 use Tests\TestCase;
 
 class InvoiceStatusResponseDTOTest extends TestCase

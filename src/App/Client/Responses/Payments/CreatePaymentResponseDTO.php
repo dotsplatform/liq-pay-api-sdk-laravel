@@ -5,7 +5,7 @@
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
-namespace Dots\LiqPay\App\Client\Responses\Invoices;
+namespace Dots\LiqPay\App\Client\Responses\Payments;
 
 use Dots\LiqPay\App\Client\Responses\LiqPayResponseDTO;
 use RuntimeException;

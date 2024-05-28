@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of FinalizeInvoiceDTO.php
+ * Description of FinalizePaymentDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */

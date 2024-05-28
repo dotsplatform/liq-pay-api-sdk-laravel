@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of InvoicesResponseDataGenerator.php
+ * Description of PaymentsResponseDataGenerator.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */

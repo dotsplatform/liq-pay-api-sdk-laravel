@@ -99,7 +99,17 @@ class LiqPayPayment extends Entity
 
     public function isOnHold(): bool
     {
-        return $this->getStatus()->isOnHold();
+        return $this->getStatus()->isHoldWait();
+    }
+
+    public function isCaptured(): bool
+    {
+        return $this->getStatus()->isSuccess();
+    }
+
+    public function isReversed(): bool
+    {
+        return $this->getStatus()->isReversed();
     }
 
     public function getAction(): Action

@@ -1,11 +1,11 @@
 <?php
 /**
- * Description of CancelInvoiceResposeDTO.php
+ * Description of CancelPaymentResposeDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
-namespace Dots\LiqPay\App\Client\Responses\Invoices;
+namespace Dots\LiqPay\App\Client\Responses\Payments;
 
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
@@ -32,5 +32,10 @@ class CancelPaymentResponseDTO extends LiqPayResponseDTO
     public function getStatus(): PaymentStatus
     {
         return $this->status;
+    }
+
+    public function isReversed(): bool
+    {
+        return $this->getStatus()->isReversed();
     }
 }

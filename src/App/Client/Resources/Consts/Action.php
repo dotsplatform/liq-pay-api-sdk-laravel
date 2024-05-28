@@ -21,4 +21,9 @@ enum Action: string
     case PAYSPLIT = 'paysplit';
     case SUBSCRIBE = 'subscribe';
     case PAYDONATE = 'paydonate';
+
+    public function isHold(): bool
+    {
+        return $this === self::HOLD;
+    }
 }

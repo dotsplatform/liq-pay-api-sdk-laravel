@@ -45,8 +45,18 @@ enum PaymentStatus: string
     case WAIT_RESERVE = 'wait_reserve';
     case WAIT_SECURE = 'wait_secure';
 
-    public function isOnHold(): bool
+    public function isHoldWait(): bool
     {
         return $this === self::HOLD_WAIT;
+    }
+
+    public function isSuccess(): bool
+    {
+        return $this === self::SUCCESS;
+    }
+
+    public function isReversed(): bool
+    {
+        return $this === self::REVERSED;
     }
 }
