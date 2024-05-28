@@ -97,6 +97,11 @@ class LiqPayPayment extends Entity
 
     protected ?string $transaction_id;
 
+    public function isOnHold(): bool
+    {
+        return $this->getStatus()->isOnHold();
+    }
+
     public function getAction(): Action
     {
         return $this->action;

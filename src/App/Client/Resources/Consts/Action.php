@@ -12,6 +12,10 @@ enum Action: string
     case PAY = 'pay';
     case STATUS = 'status';
     case HOLD = 'hold';
+
+    case HOLD_COMPLETION = 'hold_completion';
+
+    case REFUND = 'refund';
     case AUTH = 'auth';
     case REGULAR = 'regular';
     case PAYSPLIT = 'paysplit';
