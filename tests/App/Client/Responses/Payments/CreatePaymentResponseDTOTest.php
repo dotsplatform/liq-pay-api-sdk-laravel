@@ -1,22 +1,21 @@
 <?php
 /**
- * Description of CreateInvoiceResponseDTOTest.php
+ * Description of CreatePaymentResponseDTOTest.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
-namespace Tests\App\Client\Responses\Invoices;
+namespace Tests\App\Client\Responses\Payments;
 
 use Dots\LiqPay\App\Client\Responses\Payments\CreatePaymentResponseDTO;
 use Tests\TestCase;
 
-class CreateInvoiceResponseDTOTest extends TestCase
+class CreatePaymentResponseDTOTest extends TestCase
 {
     public function testFromArrayToArray(): void
     {
         $dto = CreatePaymentResponseDTO::fromArray([
-            'invoiceId' => '123456789',
-            'pageUrl' => 'https://example.com/invoice/123456789',
+            'url' => $this->uuid(),
         ]);
 
         $this->assertEquals(
@@ -28,8 +27,10 @@ class CreateInvoiceResponseDTOTest extends TestCase
     /**
      * @dataProvider fromArrayDataProvider
      */
-    public function testFromArray(array $data, array $expectedData): void
-    {
+    public function testFromArray(
+        array $data,
+        array $expectedData,
+    ): void {
         $dto = CreatePaymentResponseDTO::fromArray($data);
         $this->assertArraysEqual($expectedData, $dto->toArray());
     }
@@ -39,12 +40,10 @@ class CreateInvoiceResponseDTOTest extends TestCase
         return [
             'Test with full data' => [
                 'data' => [
-                    'invoiceId' => '123456789',
-                    'pageUrl' => 'https://example.com/invoice/123456789',
+                    'url' => 'url',
                 ],
                 'expectedData' => [
-                    'invoiceId' => '123456789',
-                    'pageUrl' => 'https://example.com/invoice/123456789',
+                    'url' => 'url',
                 ],
             ],
         ];

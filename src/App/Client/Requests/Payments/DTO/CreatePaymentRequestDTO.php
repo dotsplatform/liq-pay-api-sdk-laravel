@@ -14,21 +14,13 @@ use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
 class CreatePaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
 {
     protected string $version = LiqPayApiVersion::V3;
-
     protected string $public_key;
-
     protected Action $action = Action::HOLD;
-
     protected float $amount;
-
     protected Currency $currency;
-
     protected string $description;
-
     protected string $order_id;
-
     protected ?string $server_url;
-
     protected ?string $result_url;
 
     public function getVersion(): string

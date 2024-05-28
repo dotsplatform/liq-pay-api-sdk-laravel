@@ -14,7 +14,6 @@ use RuntimeException;
 class LiqPayWebhookDTO extends DTO
 {
     protected string $signature;
-
     protected string $data;
 
     public function getLiqPayPayment(): LiqPayPayment

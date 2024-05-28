@@ -10,15 +10,10 @@ namespace Dots\LiqPay\App\Client\Responses;
 class ErrorResponseDTO extends LiqPayResponseDTO
 {
     protected ?string $code;
-
     protected ?string $err_code;
-
     protected ?string $err_description;
-
     protected ?string $key;
-
     protected ?string $result;
-
     protected ?string $status;
 
     public function isError(): bool

@@ -14,9 +14,7 @@ use Dots\LiqPay\App\Client\Responses\LiqPayResponseDTO;
 class CancelPaymentResponseDTO extends LiqPayResponseDTO
 {
     protected Action $action;
-
     protected string $payment_id;
-
     protected PaymentStatus $status;
 
     public function getAction(): Action

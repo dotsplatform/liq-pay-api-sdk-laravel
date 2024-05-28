@@ -1,23 +1,25 @@
 <?php
 /**
- * Description of CancelInvoiceResponseDTOTest.php
+ * Description of CancelPaymentResponseDTOTest.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
-namespace Tests\App\Client\Responses\Invoices;
+namespace Tests\App\Client\Responses\Payments;
 
+use Dots\LiqPay\App\Client\Resources\Consts\Action;
+use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
 use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
 use Tests\TestCase;
 
-class CancelInvoiceResponseDTOTest extends TestCase
+class CancelPaymentResponseDTOTest extends TestCase
 {
     public function testFromArrayToArray(): void
     {
         $dto = CancelPaymentResponseDTO::fromArray([
-            'status' => 'success',
-            'createdDate' => '2024-04-18T14:36:53+00:00',
-            'modifiedDate' => '2024-04-18T14:38:10+00:00',
+            'action' => Action::REFUND,
+            'payment_id' => $this->uuid(),
+            'status' => PaymentStatus::REVERSED,
         ]);
 
         $this->assertEquals(
@@ -42,14 +44,14 @@ class CancelInvoiceResponseDTOTest extends TestCase
         return [
             'Test with full data' => [
                 'data' => [
-                    'status' => 'success',
-                    'createdDate' => '2024-04-18T14:36:53+00:00',
-                    'modifiedDate' => '2024-04-18T14:38:10+00:00',
+                    'action' => Action::REFUND,
+                    'payment_id' => 'payment_id',
+                    'status' => PaymentStatus::REVERSED,
                 ],
                 'expectedData' => [
-                    'status' => 'success',
-                    'createdDate' => '2024-04-18T14:36:53+00:00',
-                    'modifiedDate' => '2024-04-18T14:38:10+00:00',
+                    'action' => Action::REFUND->value,
+                    'payment_id' => 'payment_id',
+                    'status' => PaymentStatus::REVERSED->value,
                 ],
             ],
         ];

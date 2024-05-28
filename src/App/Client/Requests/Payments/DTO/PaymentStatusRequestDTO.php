@@ -13,11 +13,8 @@ use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
 class PaymentStatusRequestDTO extends BaseLiqPayPaymentRequestDTO
 {
     protected string $version = LiqPayApiVersion::V3;
-
     protected string $public_key;
-
     protected Action $action = Action::STATUS;
-
     protected string $order_id;
 
     public function getVersion(): string

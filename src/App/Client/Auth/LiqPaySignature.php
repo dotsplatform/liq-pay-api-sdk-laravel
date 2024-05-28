@@ -10,7 +10,7 @@ namespace Dots\LiqPay\App\Client\Auth;
 use Dots\Data\DTO;
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
 
-class LIqPaySignature
+class LiqPaySignature
 {
     public static function generate(LiqPayAuthDTO $authDTO, DTO $dto): string
     {

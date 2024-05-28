@@ -14,87 +14,46 @@ use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
 class LiqPayPayment extends Entity
 {
     protected Action $action;
-
     protected string $payment_id;
-
     protected PaymentStatus $status;
-
     protected string $version;
-
     protected ?string $type;
-
     protected ?string $paytype;
-
     protected ?string $public_key;
-
     protected ?string $acq_id;
-
     protected ?string $order_id;
-
     protected ?string $liqpay_order_id;
-
     protected ?string $description;
-
     protected ?string $sender_phone;
-
     protected ?string $sender_first_name;
-
     protected ?string $sender_last_name;
-
     protected ?string $sender_card_mask2;
-
     protected ?string $sender_card_bank;
-
     protected ?string $sender_card_type;
-
     protected ?string $sender_card_country;
-
     protected ?string $card_token;
-
     protected ?float $amount;
-
     protected ?string $currency;
-
     protected ?string $sender_commission;
-
     protected ?string $receiver_commission;
-
     protected ?string $agent_commission;
-
     protected ?string $amount_debit;
-
     protected ?string $amount_credit;
-
     protected ?string $commission_debit;
-
     protected ?string $commission_credit;
-
     protected ?string $currency_debit;
-
     protected ?string $currency_credit;
-
     protected ?string $sender_bonus;
-
     protected ?string $amount_bonus;
-
     protected ?string $authcode_debit;
-
     protected ?string $authcode_credit;
-
     protected ?string $rrn_debit;
-
     protected ?string $rrn_credit;
-
     protected ?string $mpi_eci;
-
     protected ?string $is_3ds;
-
     protected ?string $create_date;
-
     protected ?string $end_date;
-
     protected ?string $completion_date;
-
     protected ?string $transaction_id;
 
     public function isOnHold(): bool

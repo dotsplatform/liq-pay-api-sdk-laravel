@@ -12,7 +12,6 @@ use Dots\Data\DTO;
 class LiqPayAuthDTO extends DTO
 {
     protected string $publicKey;
-
     protected string $privateKey;
 
     public function getPublicKey(): string

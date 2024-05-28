@@ -8,6 +8,7 @@
 namespace Tests;
 
 use Orchestra\Testbench\TestCase as LaravelTestCase;
+use Ramsey\Uuid\Uuid;
 
 class TestCase extends LaravelTestCase
 {
@@ -20,5 +21,10 @@ class TestCase extends LaravelTestCase
             }
             $this->assertEquals($value, $actual[$key]);
         }
+    }
+
+    public function uuid(): string
+    {
+        return Uuid::uuid7()->toString();
     }
 }
