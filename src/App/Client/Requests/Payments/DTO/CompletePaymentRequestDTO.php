@@ -16,7 +16,7 @@ class CompletePaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
 
     protected string $public_key;
 
-    protected Action $action = Action::REFUND;
+    protected Action $action = Action::HOLD_COMPLETION;
 
     protected float $amount;
 
