@@ -79,7 +79,7 @@ class LiqPayConnector extends Connector
     public function resolveBaseUrl(): string
     {
         $host = config('liq-pay.host');
-        if (!is_string($host)) {
+        if (! is_string($host)) {
             throw new RuntimeException('Invalid Liq Pay host');
         }
 
