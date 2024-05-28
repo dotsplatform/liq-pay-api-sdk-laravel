@@ -17,7 +17,7 @@ class CreatePaymentResponseDTO extends LiqPayResponseDTO
 
     public static function fromResponse(Response $response): static
     {
-        $url = $response->header('location');
+        $url = $response->header('Location');
         if ($url === null) {
             throw new RuntimeException('Location header is missing');
         }

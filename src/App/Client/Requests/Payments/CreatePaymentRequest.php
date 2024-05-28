@@ -33,6 +33,13 @@ class CreatePaymentRequest extends PostLiqPayRequest
         return self::ENDPOINT;
     }
 
+    protected function defaultConfig(): array
+    {
+        return [
+            'allow_redirects' => false,
+        ];
+    }
+
     public function createDtoFromResponse(Response $response): CreatePaymentResponseDTO
     {
         return CreatePaymentResponseDTO::fromResponse($response);
