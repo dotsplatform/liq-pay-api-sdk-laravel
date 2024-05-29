@@ -44,6 +44,7 @@ class PaymentsResponseDemoDataGenerator
         return CancelPaymentResponseDTO::fromArray(array_merge([
             'action' => Action::HOLD,
             'status' => PaymentStatus::REVERSED,
+            'payment_id' => '165629',
         ], $data));
     }
 
