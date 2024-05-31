@@ -50,6 +50,11 @@ enum PaymentStatus: string
         return $this === self::HOLD_WAIT;
     }
 
+    public function isProcessing(): bool
+    {
+        return $this === self::PROCESSING;
+    }
+
     public function isSuccess(): bool
     {
         return $this === self::SUCCESS;

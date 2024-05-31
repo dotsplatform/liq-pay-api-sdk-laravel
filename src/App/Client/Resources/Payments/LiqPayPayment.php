@@ -61,6 +61,11 @@ class LiqPayPayment extends Entity
         return $this->getStatus()->isHoldWait();
     }
 
+    public function isProcessing(): bool
+    {
+        return $this->getStatus()->isProcessing();
+    }
+
     public function isCaptured(): bool
     {
         return $this->getStatus()->isSuccess();
