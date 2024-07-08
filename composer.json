@@ -10,17 +10,17 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "dotsplatform/utils": "^2.0",
+        "php": "^8.3",
+        "dotsplatform/utils": "^2.3",
         "saloonphp/saloon": "^3.5",
-        "illuminate/support": "^10.2"
+        "illuminate/support": "^11.14"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.5",
         "larastan/larastan": "^2.7",
         "eduarguz/shift-php-cs": "^3.0",
-        "laravel/laravel": "^10.2",
-        "orchestra/testbench": "^8.17"
+        "laravel/laravel": "^11.0",
+        "orchestra/testbench": "^9.1"
     },
     "autoload": {
         "psr-4": {
