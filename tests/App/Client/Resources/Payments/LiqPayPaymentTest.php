@@ -10,6 +10,7 @@ namespace Tests\App\Client\Resources\Payments;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
 use Dots\LiqPay\App\Client\Resources\Payments\LiqPayPayment;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\Generators\LiqPayPaymentGenerator;
 use Tests\TestCase;
 
@@ -25,9 +26,7 @@ class LiqPayPaymentTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider fromArrayDataProvider
-     */
+    #[DataProvider('fromArrayDataProvider')]
     public function testFromArray(
         array $data,
         array $expectedData,
@@ -126,9 +125,7 @@ class LiqPayPaymentTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider methodsProvider
-     */
+    #[DataProvider('methodsProvider')]
     public function testMethods(
         string $method,
         array $methodData,

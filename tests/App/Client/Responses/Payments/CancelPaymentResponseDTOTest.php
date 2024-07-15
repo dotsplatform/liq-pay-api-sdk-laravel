@@ -10,6 +10,7 @@ namespace Tests\App\Client\Responses\Payments;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
 use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class CancelPaymentResponseDTOTest extends TestCase
@@ -28,9 +29,7 @@ class CancelPaymentResponseDTOTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider fromArrayDataProvider
-     */
+    #[DataProvider('fromArrayDataProvider')]
     public function testFromArray(
         array $data,
         array $expectedData,

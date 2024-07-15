@@ -13,6 +13,7 @@ use Dots\LiqPay\App\Client\Requests\Payments\DTO\CreatePaymentRequestDTO;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\Currency;
 use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class CreatePaymentRequestDTOTest extends TestCase
@@ -64,9 +65,7 @@ class CreatePaymentRequestDTOTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider fromArrayDataProvider
-     */
+    #[DataProvider('fromArrayDataProvider')]
     public function testFromArray(
         array $data,
         array $expectedData,

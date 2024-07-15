@@ -11,16 +11,16 @@
     ],
     "require": {
         "php": "^8.2",
-        "dotsplatform/utils": "^2.0",
+        "dotsplatform/utils": "^2.3",
         "saloonphp/saloon": "^3.5",
-        "illuminate/support": "^10.2"
+        "illuminate/support": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5",
+        "phpunit/phpunit": "^11.2",
         "larastan/larastan": "^2.7",
         "eduarguz/shift-php-cs": "^3.0",
-        "laravel/laravel": "^10.2",
-        "orchestra/testbench": "^8.17"
+        "laravel/laravel": "^11.0",
+        "orchestra/testbench": "^9.1"
     },
     "autoload": {
         "psr-4": {
