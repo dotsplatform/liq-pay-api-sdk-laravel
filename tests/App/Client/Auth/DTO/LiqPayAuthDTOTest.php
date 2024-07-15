@@ -8,6 +8,7 @@
 namespace Tests\App\Client\Auth\DTO;
 
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class LiqPayAuthDTOTest extends TestCase
@@ -25,9 +26,7 @@ class LiqPayAuthDTOTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider fromArrayDataProvider
-     */
+    #[DataProvider('fromArrayDataProvider')]
     public function testFromArray(
         array $data,
         array $expectedData,

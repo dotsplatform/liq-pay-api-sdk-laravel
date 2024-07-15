@@ -12,6 +12,7 @@ use Dots\LiqPay\App\Client\Auth\LiqPaySignature;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\CancelPaymentRequestDTO;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class CancelPaymentRequestDTOTest extends TestCase
@@ -55,9 +56,7 @@ class CancelPaymentRequestDTOTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider fromArrayDataProvider
-     */
+    #[DataProvider('fromArrayDataProvider')]
     public function testFromArray(
         array $data,
         array $expectedData,

@@ -12,6 +12,7 @@ use Dots\LiqPay\App\Client\Auth\LiqPaySignature;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\PaymentStatusRequestDTO;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 class PaymentStatusRequestDTOTest extends TestCase
@@ -53,9 +54,7 @@ class PaymentStatusRequestDTOTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider fromArrayDataProvider
-     */
+    #[DataProvider('fromArrayDataProvider')]
     public function testFromArray(
         array $data,
         array $expectedData,
