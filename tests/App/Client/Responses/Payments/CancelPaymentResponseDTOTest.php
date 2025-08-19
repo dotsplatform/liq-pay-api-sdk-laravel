@@ -9,7 +9,7 @@ namespace Tests\App\Client\Responses\Payments;
 
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
-use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\RefundPaymentResponseDTO;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
@@ -17,7 +17,7 @@ class CancelPaymentResponseDTOTest extends TestCase
 {
     public function testFromArrayToArray(): void
     {
-        $dto = CancelPaymentResponseDTO::fromArray([
+        $dto = RefundPaymentResponseDTO::fromArray([
             'action' => Action::REFUND,
             'payment_id' => $this->uuid(),
             'status' => PaymentStatus::REVERSED,
@@ -25,7 +25,7 @@ class CancelPaymentResponseDTOTest extends TestCase
 
         $this->assertEquals(
             $dto->toArray(),
-            CancelPaymentResponseDTO::fromArray($dto->toArray())->toArray(),
+            RefundPaymentResponseDTO::fromArray($dto->toArray())->toArray(),
         );
     }
 
@@ -34,7 +34,7 @@ class CancelPaymentResponseDTOTest extends TestCase
         array $data,
         array $expectedData,
     ): void {
-        $dto = CancelPaymentResponseDTO::fromArray($data);
+        $dto = RefundPaymentResponseDTO::fromArray($data);
         $this->assertArraysEqual($expectedData, $dto->toArray());
     }
 

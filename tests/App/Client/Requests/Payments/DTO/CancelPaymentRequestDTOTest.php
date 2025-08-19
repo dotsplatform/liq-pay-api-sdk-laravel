@@ -9,7 +9,7 @@ namespace Tests\App\Client\Requests\Payments\DTO;
 
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
 use Dots\LiqPay\App\Client\Auth\LiqPaySignature;
-use Dots\LiqPay\App\Client\Requests\Payments\DTO\CancelPaymentRequestDTO;
+use Dots\LiqPay\App\Client\Requests\Payments\DTO\RefundPaymentRequestDTO;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -19,7 +19,7 @@ class CancelPaymentRequestDTOTest extends TestCase
 {
     public function testFromArrayToArray(): void
     {
-        $dto = CancelPaymentRequestDTO::fromArray([
+        $dto = RefundPaymentRequestDTO::fromArray([
             'public_key' => $this->uuid(),
             'amount' => 100.0,
             'order_id' => $this->uuid(),
@@ -27,13 +27,13 @@ class CancelPaymentRequestDTOTest extends TestCase
 
         $this->assertEquals(
             $dto->toArray(),
-            CancelPaymentRequestDTO::fromArray($dto->toArray())->toArray(),
+            RefundPaymentRequestDTO::fromArray($dto->toArray())->toArray(),
         );
     }
 
     public function testToRequestData(): void
     {
-        $dto = CancelPaymentRequestDTO::fromArray([
+        $dto = RefundPaymentRequestDTO::fromArray([
             'public_key' => $this->uuid(),
             'amount' => 100.0,
             'order_id' => $this->uuid(),
@@ -61,7 +61,7 @@ class CancelPaymentRequestDTOTest extends TestCase
         array $data,
         array $expectedData,
     ): void {
-        $dto = CancelPaymentRequestDTO::fromArray($data);
+        $dto = RefundPaymentRequestDTO::fromArray($data);
         $this->assertArraysEqual($expectedData, $dto->toArray());
     }
 

@@ -2,38 +2,25 @@
 /**
  * Description of CancelPaymentResposeDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
- * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
+ * @author    Bogdan Mamontov <bohdan.mamontov@dotsplatform.com>
  */
 
 namespace Dots\LiqPay\App\Client\Responses\Payments;
 
-use Dots\LiqPay\App\Client\Resources\Consts\Action;
-use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
 use Dots\LiqPay\App\Client\Responses\LiqPayResponseDTO;
 
 class CancelPaymentResponseDTO extends LiqPayResponseDTO
 {
-    protected Action $action;
-    protected string $payment_id;
-    protected PaymentStatus $status;
+    protected int $invoice_id;
+    protected string $result;
 
-    public function getAction(): Action
+    public function getInvoiceId(): int
     {
-        return $this->action;
+        return $this->invoice_id;
     }
 
-    public function getPaymentId(): string
+    public function getResult(): string
     {
-        return $this->payment_id;
-    }
-
-    public function getStatus(): PaymentStatus
-    {
-        return $this->status;
-    }
-
-    public function isReversed(): bool
-    {
-        return $this->getStatus()->isReversed();
+        return $this->result;
     }
 }

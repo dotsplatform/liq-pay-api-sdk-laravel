@@ -7,12 +7,12 @@
 
 namespace Dots\LiqPay\Mocks\Payments;
 
-use Dots\LiqPay\App\Client\Requests\Payments\CancelPaymentRequest;
 use Dots\LiqPay\App\Client\Requests\Payments\CompletePaymentRequest;
 use Dots\LiqPay\App\Client\Requests\Payments\CreatePaymentRequest;
 use Dots\LiqPay\App\Client\Requests\Payments\PaymentStatusRequest;
+use Dots\LiqPay\App\Client\Requests\Payments\RefundPaymentRequest;
 use Dots\LiqPay\App\Client\Resources\Payments\LiqPayPayment;
-use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\RefundPaymentResponseDTO;
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 
@@ -81,11 +81,11 @@ class LiqPayPaymentsResponseMocker
         return $data;
     }
 
-    public static function mockSuccessCancelPayment(array $data = []): CancelPaymentResponseDTO
+    public static function mockSuccessCancelPayment(array $data = []): RefundPaymentResponseDTO
     {
         $dto = PaymentsResponseDemoDataGenerator::generateSuccessCancelPayment($data);
         MockClient::global([
-            CancelPaymentRequest::class => MockResponse::make($dto->toArray()),
+            RefundPaymentRequest::class => MockResponse::make($dto->toArray()),
         ]);
 
         return $dto;
@@ -95,7 +95,7 @@ class LiqPayPaymentsResponseMocker
     {
         $data = PaymentsResponseDemoDataGenerator::generateErrorResponsePayment($data);
         MockClient::global([
-            CancelPaymentRequest::class => MockResponse::make($data),
+            RefundPaymentRequest::class => MockResponse::make($data),
         ]);
 
         return $data;
