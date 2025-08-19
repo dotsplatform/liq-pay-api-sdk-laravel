@@ -9,14 +9,14 @@ namespace Tests\App\Client\Auth;
 
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
 use Dots\LiqPay\App\Client\Auth\LiqPaySignature;
-use Dots\LiqPay\App\Client\Requests\Payments\DTO\CancelPaymentRequestDTO;
+use Dots\LiqPay\App\Client\Requests\Payments\DTO\RefundPaymentRequestDTO;
 use Tests\TestCase;
 
 class LIqPaySignatureTest extends TestCase
 {
     public function testSignature(): void
     {
-        $dto = CancelPaymentRequestDTO::fromArray([
+        $dto = RefundPaymentRequestDTO::fromArray([
             'public_key' => $this->uuid(),
             'order_id' => $this->uuid(),
             'amount' => 20,

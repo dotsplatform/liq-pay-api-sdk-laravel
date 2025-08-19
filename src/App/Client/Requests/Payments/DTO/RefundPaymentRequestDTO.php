@@ -2,7 +2,7 @@
 /**
  * Description of CancelPaymentDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
- * @author    Bogdan Mamontov <bohdan.mamontov@dotsplatform.com>
+ * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
 namespace Dots\LiqPay\App\Client\Requests\Payments\DTO;
@@ -10,11 +10,12 @@ namespace Dots\LiqPay\App\Client\Requests\Payments\DTO;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
 
-class CancelPaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
+class RefundPaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
 {
     protected string $version = LiqPayApiVersion::V3;
     protected string $public_key;
-    protected Action $action = Action::INVOICE_CANCEL;
+    protected Action $action = Action::REFUND;
+    protected float $amount;
     protected string $order_id;
 
     public function getVersion(): string
@@ -30,6 +31,11 @@ class CancelPaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
     public function getAction(): Action
     {
         return $this->action;
+    }
+
+    public function getAmount(): float
+    {
+        return $this->amount;
     }
 
     public function getOrderId(): string

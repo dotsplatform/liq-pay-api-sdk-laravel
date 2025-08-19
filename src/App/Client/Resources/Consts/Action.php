@@ -11,6 +11,7 @@ enum Action: string
 {
     case PAY = 'pay';
     case STATUS = 'status';
+    case INVOICE_CANCEL = 'invoice_cancel';
     case HOLD = 'hold';
 
     case HOLD_COMPLETION = 'hold_completion';

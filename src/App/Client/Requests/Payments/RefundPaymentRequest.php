@@ -1,24 +1,25 @@
 <?php
 /**
- * Description of CancelPaymentRequest.php
+ * Description of RefundPaymentRequest.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
- * @author    Bogdan Mamontov <bohdan.mamontov@dotsplatform.com>
+ * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
 namespace Dots\LiqPay\App\Client\Requests\Payments;
 
 use Dots\LiqPay\App\Client\Auth\DTO\LiqPayAuthDTO;
-use Dots\LiqPay\App\Client\Requests\Payments\DTO\CancelPaymentRequestDTO;
+use Dots\LiqPay\App\Client\Requests\Payments\DTO\RefundPaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\PostLiqPayRequest;
+use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
 use Saloon\Http\Response;
 
-class CancelPaymentRequest extends PostLiqPayRequest
+class RefundPaymentRequest extends PostLiqPayRequest
 {
     private const ENDPOINT = '/api/request';
 
     public function __construct(
         private readonly LiqPayAuthDTO $authDTO,
-        private readonly CancelPaymentRequestDTO $dto,
+        private readonly RefundPaymentRequestDTO $dto,
     ) {
     }
 
@@ -32,7 +33,7 @@ class CancelPaymentRequest extends PostLiqPayRequest
         return self::ENDPOINT;
     }
 
-    public function createDtoFromResponse(Response $response): CancelPymentResponseDTO
+    public function createDtoFromResponse(Response $response): CancelPaymentResponseDTO
     {
         return CancelPaymentResponseDTO::fromResponse($response);
     }

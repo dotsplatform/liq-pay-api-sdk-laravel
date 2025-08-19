@@ -16,11 +16,14 @@ use Dots\LiqPay\App\Client\Requests\Payments\DTO\CancelPaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\CompletePaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\CreatePaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\Payments\DTO\PaymentStatusRequestDTO;
+use Dots\LiqPay\App\Client\Requests\Payments\DTO\RefundPaymentRequestDTO;
 use Dots\LiqPay\App\Client\Requests\Payments\PaymentStatusRequest;
+use Dots\LiqPay\App\Client\Requests\Payments\RefundPaymentRequest;
 use Dots\LiqPay\App\Client\Resources\Payments\LiqPayPayment;
 use Dots\LiqPay\App\Client\Responses\ErrorResponseDTO;
 use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
 use Dots\LiqPay\App\Client\Responses\Payments\CreatePaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\RefundPaymentResponseDTO;
 use RuntimeException;
 use Saloon\Http\Connector;
 use Saloon\Http\Response;
@@ -47,6 +50,14 @@ class LiqPayConnector extends Connector
     /**
      * @throws LiqPayException
      */
+    public function cancelPayment(CancelPaymentRequestDTO $dto): CancelPaymentResponseDTO
+    {
+        return $this->send(new CancelPaymentRequest($this->authDto, $dto))->dto();
+    }
+
+    /**
+     * @throws LiqPayException
+     */
     public function paymentStatus(PaymentStatusRequestDTO $dto): LiqPayPayment
     {
         return $this->send(new PaymentStatusRequest($this->authDto, $dto))->dto();
@@ -63,9 +74,9 @@ class LiqPayConnector extends Connector
     /**
      * @throws LiqPayException
      */
-    public function cancelPayment(CancelPaymentRequestDTO $dto): CancelPaymentResponseDTO
+    public function refundPayment(RefundPaymentRequestDTO $dto): RefundPaymentResponseDTO
     {
-        return $this->send(new CancelPaymentRequest($this->authDto, $dto))->dto();
+        return $this->send(new RefundPaymentRequest($this->authDto, $dto))->dto();
     }
 
     protected function defaultHeaders(): array

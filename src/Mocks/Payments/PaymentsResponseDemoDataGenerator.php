@@ -10,8 +10,8 @@ namespace Dots\LiqPay\Mocks\Payments;
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
 use Dots\LiqPay\App\Client\Resources\Consts\PaymentStatus;
 use Dots\LiqPay\App\Client\Resources\Payments\LiqPayPayment;
-use Dots\LiqPay\App\Client\Responses\Payments\CancelPaymentResponseDTO;
 use Dots\LiqPay\App\Client\Responses\Payments\CreatePaymentResponseDTO;
+use Dots\LiqPay\App\Client\Responses\Payments\RefundPaymentResponseDTO;
 
 class PaymentsResponseDemoDataGenerator
 {
@@ -39,9 +39,9 @@ class PaymentsResponseDemoDataGenerator
         return self::generatePayment($data);
     }
 
-    public static function generateSuccessCancelPayment(array $data = []): CancelPaymentResponseDTO
+    public static function generateSuccessCancelPayment(array $data = []): RefundPaymentResponseDTO
     {
-        return CancelPaymentResponseDTO::fromArray(array_merge([
+        return RefundPaymentResponseDTO::fromArray(array_merge([
             'action' => Action::HOLD,
             'status' => PaymentStatus::REVERSED,
             'payment_id' => '165629',
