@@ -8,6 +8,7 @@
 namespace Dots\LiqPay\App\Client\Requests\Payments\DTO;
 
 use Dots\LiqPay\App\Client\Resources\Consts\Action;
+use Dots\LiqPay\App\Client\Resources\Consts\Currency;
 use Dots\LiqPay\App\Client\Resources\Consts\LiqPayApiVersion;
 
 class CancelPaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
@@ -16,6 +17,7 @@ class CancelPaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
     protected string $public_key;
     protected Action $action = Action::REFUND;
     protected float $amount;
+    protected Currency $currency;
     protected string $order_id;
 
     public function getVersion(): string
@@ -36,6 +38,11 @@ class CancelPaymentRequestDTO extends BaseLiqPayPaymentRequestDTO
     public function getAmount(): float
     {
         return $this->amount;
+    }
+
+    public function getCurrency(): Currency
+    {
+        return $this->currency;
     }
 
     public function getOrderId(): string
